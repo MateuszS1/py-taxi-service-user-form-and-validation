@@ -6,6 +6,6 @@
     {% csrf_token %}
 
     <input type="submit" value="Yes" class="btn btn-danger">
-    <a href="{% url 'taxi:driver-list' %}" class="btn btn-primary link-to-page">No</a>
+    <a href="{{ request.META.HTTP_REFERER|default:'taxi:driver-list' }}" class="btn btn-primary link-to-page">Cancel</a>
   </form>
 {% endblock %}
